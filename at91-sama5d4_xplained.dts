@@ -263,6 +263,23 @@
 			linux,default-trigger = "heartbeat";
 		};
 	};
+	
+	pulses {
+		compatible = "gpio-pulses";
+		
+		oil {
+			label = "oil";
+			gpios = <&pioE 12 GPIO_ACTIVE_HIGH>;
+			trigger = "both";
+		};
+		
+		water {
+			label = "water";
+			gpios = <&pioE 13 GPIO_ACTIVE_HIGH>;
+			trigger = "rising";		
+		};
+	};
+			
 
 	vcc_3v3_reg: fixedregulator_3v3 {
 		compatible = "regulator-fixed";
